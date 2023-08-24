@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="mainbox">
+
+        <input type="checkbox" class="checkbox" name="mango" value="mango"> mango <br>
+        <input type="checkbox" class="checkbox" name="banana" value="banana"> banana <br>
+        <input type="checkbox" class="checkbox" name="apple" value="apple"> apple <br>
+
+    </div>
+
+    <div class="list1">
+
+        <h1>your fruits </h1>
+
+        <div id="list">
+
+        </div>
+
+    </div>
+
+    <script>
+
+
+        var list = document.getElementById("list");
+        var text = `<span> you have selected : </span>`;
+        var ListArray = [];
+
+        var checkbox = document.querySelectorAll(".checkbox");
+
+        for (var c of checkbox) {
+            c.addEventListener('click', function () {
+                if (this.checked == true) {
+                    ListArray.push(this.value);
+                    list.innerHTML = text + ListArray.join('/')
+                } else {
+                    console.log("you unchecked value")
+                }
+            })
+        }
+
+    </script>
+
+</body>
+
+</html>
